@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/daohanglan.css">
+    <link rel="stylesheet" href="css/foot.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/message.css">
+    <title>留言板 - 南宁市</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="fixed-bg"></div>
+    
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>南宁市</h1>
+                <p class="slogan">绿城地图 社区风情</p>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="travel.html">旅游景区</a></li>
+                <li><a href="gallery.html">风景相册</a></li>
+                <li><a href="traffic.html">交通出行</a></li>
+                <li><a href="message.html" class="active">留言板</a></li>
+                <li><a href="login.html" class="login-btn">登录 | 注册</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- 留言板主体 -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <h2>留言板</h2>
+                <p>分享您对南宁的印象和建议，我们期待听到您的声音</p>
+            </div>
+            
+            <div class="message-board">
+                <div class="message-form">
+                    <textarea id="messageInput" placeholder="请输入您的留言..."></textarea>
+                    <button class="submit-btn" id="submitMessage">提交留言</button>
+                </div>
+                
+                <div class="messages-container" id="messagesContainer">
+                    <!-- 留言将通过JS动态加载 -->
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>南宁旅游网</h3>
+                    <p>为您提供最全面的南宁旅游资讯和攻略</p>
+                </div>
+                <div class="footer-section">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="travel.html">旅游景区</a></li>
+                        <li><a href="gallery.html">风景相册</a></li>
+                        <li><a href="traffic.html">交通出行</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>联系我们</h4>
+                    <p><i class="fas fa-envelope"></i> 6666666</p>
+                    <p><i class="fas fa-phone"></i> 6666666666</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-weixin"></i></a>
+                        <a href="#"><i class="fab fa-weibo"></i></a>
+                        <a href="#"><i class="fab fa-douyin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>版权所有欢欢</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // 加载留言
+        function loadMessages() {
+            fetch('/api/messages')
+                .then(response => response.json())
+                .then(messages => {
+                    const container = document.getElementById('messagesContainer');
+                    container.innerHTML = '';
+                    
+                    if (messages.length === 0) {
+                        container.innerHTML = '<div class="no-messages">暂无留言，快来发表第一条留言吧！</div>';
+                        return;
+                    }
+                    
+                    // 倒序显示，最新的在前面
+                    messages.reverse().forEach(msg => {
+                        const messageDiv = document.createElement('div');
+                        messageDiv.className = 'message-item';
+                        
+                        const date = new Date(msg.timestamp);
+                        const formattedTime = date.toLocaleString();
+                        
+                        messageDiv.innerHTML = `
+                            <div class="message-text">${msg.content}</div>
+                            <div class="message-time">${formattedTime}</div>
+                        `;
+                        
+                        container.appendChild(messageDiv);
+                    });
+                })
+                .catch(error => console.error('加载留言失败:', error));
+        }
+        
+        // 提交留言
+        document.getElementById('submitMessage').addEventListener('click', function() {
+            const content = document.getElementById('messageInput').value.trim();
+            
+            if (!content) {
+                alert('请输入留言内容');
+                return;
+            }
+            
+            fetch('/api/messages', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ content: content })
+            })
+            .then(response => {
+                if (response.ok) {
+                    document.getElementById('messageInput').value = '';
+                    loadMessages(); // 重新加载留言列表
+                } else {
+                    alert('提交失败，请重试');
+                }
+            })
+            .catch(error => console.error('提交留言失败:', error));
+        });
+        
+        // 页面加载时加载留言
+        window.onload = loadMessages;
+        
+        // 移动端菜单切换
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

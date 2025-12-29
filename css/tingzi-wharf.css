@@ -1,0 +1,189 @@
+
+.wharf-container {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 0 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* 卡片容器 - 半透明效果 */
+.wharf-container .wharf-card {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* 标题区域 - 增强对比度 */
+.wharf-container .title-section {
+    text-align: center;
+    padding: 25px 30px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.wharf-container .main-title {
+    font-size: 32px;
+    font-weight: 700; /* 加粗 */
+    color: #08da66; /* 更深的绿色，增强对比度 */
+    margin: 0;
+    letter-spacing: 3px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.wharf-container .title-char {
+    display: inline-block;
+    margin: 0 5px;
+    color: #0cd265; /* 更深的颜色 */
+    font-weight: 700;
+}
+
+/* 卡片内容布局 */
+.wharf-container .wharf-card {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* 图片区域 - 左侧 */
+.wharf-container .image-section {
+    flex: 1;
+    min-width: 300px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wharf-container .image-frame {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.wharf-container .wharf-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.wharf-container .image-overlay {
+    background: rgba(11, 186, 81, 0.75); /* 加深叠加层 */
+    padding: 12px;
+    text-align: center;
+}
+
+.wharf-container .image-title {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600; /* 加粗 */
+    margin: 0;
+    letter-spacing: 0.5px;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 文字内容区域 - 右侧 */
+.wharf-container .content-section {
+    flex: 1.2;
+    min-width: 300px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 内容头部 - 增强对比度 */
+.wharf-container .content-header {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* 加深分界线 */
+}
+
+.wharf-container .wharf-title {
+    font-size: 26px;
+    font-weight: 700; /* 加粗 */
+    color: #0fe870; /* 更深的绿色 */
+    margin: 0 0 8px 0;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.9);
+    -webkit-font-smoothing: antialiased;
+}
+
+.wharf-container .wharf-subtitle {
+    font-size: 18px;
+    font-weight: 600; /* 加粗 */
+    color: #11bde8e9; /* 更深的橙色，增强对比度 */
+    margin: 0 0 15px 0;
+    letter-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+}
+
+.wharf-container .location {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #1a5276; /* 更深的蓝色 */
+    font-weight: 600; /* 加粗 */
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.3); /* 添加轻微背景 */
+    border-radius: 6px;
+    border: 1px solid rgba(26, 82, 118, 0.2);
+}
+
+.wharf-container .location i {
+    font-size: 14px;
+    color: #0d8bd9; /* 匹配文字颜色 */
+}
+
+/* 内容主体 - 增强对比度 */
+.wharf-container .content-body {
+    flex: 1;
+    margin-bottom: 25px;
+}
+
+.wharf-container .description {
+    font-size: 20px;
+    color: hsla(0, 0%, 5%, 0.836); /* 接近黑色的深灰色 */
+    margin-bottom: 18px;
+    line-height: 1.7;
+    text-align: justify;
+    font-weight: 500; /* 中等加粗 */
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: 0.2px;
+}
+
+.wharf-container .description:last-child {
+    margin-bottom: 0;
+}
+
+/* 内容底部 - 增强对比度 */
+.wharf-container .content-footer {
+    padding-top: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1); /* 加深分界线 */
+}
+
+.wharf-container .image-caption {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #333333; /* 更深的灰色 */
+    font-size: 14px;
+    font-weight: 600; /* 加粗 */
+    -webkit-font-smoothing: antialiased;
+    padding: 10px 16px;
+    background: rgba(255, 255, 255, 0.3); /* 添加轻微背景 */
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.wharf-container .image-caption i {
+    color: #c44500; /* 更深的橙色，增强对比度 */
+    font-size: 16px;
+}
+.wharf-card {
+    margin-bottom: 30px; /* 卡片之间的间距 */
+}

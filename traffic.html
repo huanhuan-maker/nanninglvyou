@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/daohanglan.css">
+    <link rel="stylesheet" href="css/foot.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/traffic.css">
+    <title>南宁交通出行</title>
+</head>
+<body>
+    <div class="fixed-bg"></div>
+    
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>南宁市</h1>
+                <p class="slogan">绿城地图 社区风情</p>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="travel.html">旅游景区</a></li>
+                <li><a href="gallery.html">风景相册</a></li>
+                <li><a href="traffic.html" class="active">交通出行</a></li>
+                <li><a href="message.html">留言板</a></li>
+                <li><a href="login.html" class="login-btn">登录 | 注册</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- 交通出行头部 -->
+    <div class="transport-header">
+        <div class="container">
+            <h1 class="transport-title">南宁交通出行</h1>
+            <p class="transport-subtitle">便捷交通 · 畅游绿城</p>
+            <p class="transport-description">
+                南宁作为广西首府，拥有完善的公共交通网络。地铁、高铁、公交等多种交通方式，
+                让您轻松抵达城市的每一个角落，体验南宁的独特魅力。
+            </p>
+        </div>
+    </div>
+    
+    <!-- 交通出行主体 -->
+    <div class="transport-container">
+        <div class="container">
+            <!-- 地铁部分 -->
+            <section class="transport-section" id="subway">
+                <div class="section-header">
+                    <i class="fas fa-subway section-icon"></i>
+                    <h2>南宁地铁</h2>
+                    <p class="section-subtitle">城市轨道交通网络</p>
+                </div>
+                <div class="section-content">
+                    <div class="transport-intro">
+                        <p>
+                            南宁地铁目前开通了5条线路，覆盖了城市主要区域。地铁运营时间一般为6:30-23:00，
+                            票价2-7元不等，支持现金购票、市民卡、二维码扫码等多种支付方式。
+                        </p>
+                    </div>
+                    
+                    <div class="transport-details">
+                        <div class="detail-card">
+                            <h3><i class="fas fa-info-circle"></i> 地铁线路</h3>
+                            <ul class="transport-list">
+                                <li><span class="line-number line1">1号线</span>：石埠 ↔ 火车东站 (全长32.1km)</li>
+                                <li><span class="line-number line2">2号线</span>：西津 ↔ 坛泽 (全长27.5km)</li>
+                                <li><span class="line-number line3">3号线</span>：科园大道 ↔ 平良立交 (全长27.9km)</li>
+                                <li><span class="line-number line4">4号线</span>：洪运路 ↔ 楞塘村 (全长20.7km)</li>
+                                <li><span class="line-number line5">5号线</span>：国凯大道 ↔ 金桥客运站 (全长20.2km)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="detail-card">
+                            <h3><i class="fas fa-clock"></i> 运营时间</h3>
+                            <ul class="transport-list">
+                                <li><strong>工作日：</strong>6:30 - 23:00</li>
+                                <li><strong>周末及节假日：</strong>6:30 - 23:30</li>
+                                <li><strong>高峰时段：</strong>7:30-9:30, 17:30-19:30</li>
+                                <li><strong>发车间隔：</strong>高峰期约5分钟，平峰期约7-10分钟</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- 地铁线路图 -->
+                    <div class="subway-map-container">
+                        <h3><i class="fas fa-map"></i> 南宁地铁线路图</h3>
+                        <div class="map-wrapper">
+                            <img src="image/8.jpg" alt="南宁地铁线路图" class="subway-map" id="subwayMap">
+                            <div class="map-overlay">
+                                <button class="zoom-btn" id="zoomInBtn">
+                                    <i class="fas fa-search-plus"></i>
+                                </button>
+                                <button class="zoom-btn" id="zoomOutBtn">
+                                    <i class="fas fa-search-minus"></i>
+                                </button>
+                                <button class="zoom-btn" id="resetZoomBtn">
+                                    <i class="fas fa-sync-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <p class="map-note">点击放大/缩小按钮查看地铁线路详情</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 高铁部分 -->
+            <section class="transport-section" id="highspeed-rail">
+                <div class="section-header">
+                    <i class="fas fa-train section-icon"></i>
+                    <h2>南宁高铁</h2>
+                    <p class="section-subtitle">高速铁路交通枢纽</p>
+                </div>
+                
+                <div class="section-content">
+                    <div class="transport-intro">
+                        <p>
+                            南宁作为广西高铁网络的核心枢纽，连接了区内主要城市及周边省份。
+                            南宁东站、南宁站是两大主要高铁站，提供便捷高效的高铁服务。
+                        </p>
+                    </div>
+                    
+                    <div class="transport-details">
+                        <div class="detail-card">
+                            <h3><i class="fas fa-map-marker-alt"></i> 主要高铁站</h3>
+                            <div class="station-cards">
+                                <div class="station-card">
+                                    <div class="station-header">
+                                        <h4>南宁东站</h4>
+                                        <span class="station-type">主要高铁站</span>
+                                    </div>
+                                    <p><i class="fas fa-location-dot"></i> 地址：青秀区凤岭北路</p>
+                                    <p><i class="fas fa-subway"></i> 地铁：1号线南宁东站</p>
+                                    <p><i class="fas fa-road"></i> 主要线路：南广高铁、贵南高铁、南凭高铁</p>
+                                </div>
+                                
+                                <div class="station-card">
+                                    <div class="station-header">
+                                        <h4>南宁站</h4>
+                                        <span class="station-type">综合交通枢纽</span>
+                                    </div>
+                                    <p><i class="fas fa-location-dot"></i> 地址：西乡塘区中华路</p>
+                                    <p><i class="fas fa-subway"></i> 地铁：2号线南宁火车站</p>
+                                    <p><i class="fas fa-road"></i> 主要线路：湘桂铁路、南昆铁路</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-card">
+                            <h3><i class="fas fa-route"></i> 主要高铁线路</h3>
+                            <div class="route-list">
+                                <div class="route-item">
+                                    <h4>南广高铁</h4>
+                                    <p>南宁 - 广州，约3小时</p>
+                                </div>
+                                <div class="route-item">
+                                    <h4>贵南高铁</h4>
+                                    <p>南宁 - 贵阳，约2小时</p>
+                                </div>
+                                <div class="route-item">
+                                    <h4>南凭高铁</h4>
+                                    <p>南宁 - 凭祥，约1小时</p>
+                                </div>
+                                <div class="route-item">
+                                    <h4>南昆高铁</h4>
+                                    <p>南宁 - 昆明，约4.5小时</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 高铁信息 -->
+                    <div class="rail-info">
+                        <div class="info-card">
+                            <h3><i class="fas fa-ticket-alt"></i> 购票方式</h3>
+                            <div class="ticket-methods">
+                                <a href="https://www.ctrip.com/n" target="_blank">
+                                <div class="method">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <p>手机购票</p>
+                                    <span>携程app</span>
+                                </div>
+                                </a>
+                                <a href="www.12306.cn" target="_blank">
+                                <div class="method">
+                                    <i class="fas fa-desktop"></i>
+                                    <p>官方网站</p>
+                                    <span>www.12306.cn</span>
+                                </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>南宁旅游网</h3>
+                    <p>为您提供最全面的南宁旅游资讯和攻略</p>
+                </div>
+                <div class="footer-section">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="travel.html">旅游景区</a></li>
+                        <li><a href="gallery.html">风景相册</a></li>
+                        <li><a href="traffic.html">交通出行</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>联系我们</h4>
+                    <p><i class="fas fa-envelope"></i> 6666666</p>
+                    <p><i class="fas fa-phone"></i> 6666666666</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-weixin"></i></a>
+                        <a href="#"><i class="fab fa-weibo"></i></a>
+                        <a href="#"><i class="fab fa-douyin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>版权所有欢欢</p>
+            </div>
+        </div>
+    </footer>
+    <script src="traffic.js"></script>
+</body>
+</html>

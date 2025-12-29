@@ -1,0 +1,560 @@
+body {
+    background: rgba(0, 0, 0, 0.7); /* 深色半透明背景 */
+    color: #fff;
+    min-height: 100vh;
+}
+
+/* 头部样式 - 置顶并贴合导航栏 */
+.transport-header {
+    background: rgba(0, 0, 0, 0.85); /* 半透明黑色背景 */
+    color: white;
+    padding: 60px 0 40px; /* 减少上下内边距 */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    margin-top: 0; /* 移除顶部外边距 */
+}
+
+.transport-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+        rgba(25, 118, 210, 0.15), 
+        rgba(33, 150, 243, 0.15));
+    z-index: 0;
+}
+
+.transport-header .container {
+    position: relative;
+    z-index: 1;
+    padding: 0 20px; /* 添加左右内边距 */
+}
+
+/* 调整标题和副标题大小和间距 */
+.transport-title {
+    font-size: 2.8rem; /* 稍微减小字体 */
+    font-weight: 700;
+    margin-bottom: 10px; /* 减少下边距 */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    background: linear-gradient(45deg, #4fc3f7, #1976d2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    padding-top: 0; /* 移除顶部内边距 */
+}
+
+.transport-subtitle {
+    font-size: 1.5rem; /* 稍微减小字体 */
+    margin-bottom: 15px; /* 减少下边距 */
+    opacity: 0.9;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    color: #bbdefb;
+}
+
+.transport-description {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem; /* 稍微减小字体 */
+    line-height: 1.6; /* 减少行高 */
+    opacity: 0.9;
+    padding: 0 15px; /* 减少左右内边距 */
+    color: #e3f2fd;
+}
+
+/* 主要内容容器 - 添加顶部间距 */
+.transport-container {
+    padding: 40px 0; /* 减少顶部内边距 */
+    background: transparent; /* 透明背景，显示固定背景图 */
+    min-height: 500px;
+}
+
+/* 交通部分样式 - 卡片式设计 */
+.transport-section {
+    margin-bottom: 100px;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.85); /* 半透明黑色卡片背景 */
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        0 2px 8px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.transport-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, 
+        rgba(25, 118, 210, 0.8),
+        rgba(33, 150, 243, 0.8));
+    z-index: 1;
+}
+
+.transport-section:hover {
+    transform: translateY(-10px);
+    box-shadow: 
+        0 15px 50px rgba(0, 0, 0, 0.4),
+        0 5px 15px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    border-color: rgba(33, 150, 243, 0.3);
+}
+
+/* 部分头部样式 */
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+    padding-bottom: 25px;
+    position: relative;
+}
+
+.section-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 3px;
+    background: linear-gradient(90deg, 
+        rgba(25, 118, 210, 0),
+        rgba(25, 118, 210, 0.8),
+        rgba(25, 118, 210, 0));
+}
+
+.section-icon {
+    font-size: 3.5rem;
+    color: #4fc3f7;
+    margin-bottom: 20px;
+    text-shadow: 0 0 20px rgba(79, 195, 247, 0.5);
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.transport-section:hover .section-icon {
+    transform: scale(1.1);
+    text-shadow: 0 0 30px rgba(79, 195, 247, 0.7);
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    color: #e3f2fd;
+    margin-bottom: 15px;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.section-subtitle {
+    color: #bbdefb;
+    font-size: 1.3rem;
+    opacity: 0.9;
+}
+
+/* 内容区域 */
+.transport-intro {
+    background: rgba(30, 30, 40, 0.6);
+    padding: 25px 30px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    border-left: 4px solid #1976d2;
+    position: relative;
+    overflow: hidden;
+}
+
+.transport-intro::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        rgba(25, 118, 210, 0.1),
+        rgba(33, 150, 243, 0.1));
+    z-index: 0;
+}
+
+.transport-intro p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #e3f2fd;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+}
+
+/* 详细信息卡片 */
+.transport-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.detail-card {
+    background: rgba(20, 25, 35, 0.9);
+    border-radius: 15px;
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.detail-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, 
+        rgba(25, 118, 210, 0.6),
+        rgba(33, 150, 243, 0.6));
+}
+
+.detail-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(33, 150, 243, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.detail-card h3 {
+    color: #4fc3f7;
+    margin-bottom: 25px;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 600;
+}
+
+.detail-card h3 i {
+    font-size: 1.3em;
+}
+
+/* 地铁线路编号样式 */
+.transport-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.transport-list li {
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.transport-list li:hover {
+    background: rgba(255, 255, 255, 0.05);
+    padding-left: 10px;
+    border-radius: 5px;
+}
+
+.transport-list li:last-child {
+    border-bottom: none;
+}
+
+.line-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    padding: 8px 15px;
+    border-radius: 25px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    margin-right: 20px;
+    font-size: 1rem;
+    min-width: 70px;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.line-number:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.line1 { 
+    background: linear-gradient(135deg, #27f607, #05810b);
+    border: 1px solid rgba(229, 57, 53, 0.3);
+}
+.line2 { 
+    background: linear-gradient(135deg, #d12121, #e20505);
+    border: 1px solid rgba(25, 118, 210, 0.3);
+}
+.line3 { 
+    background: linear-gradient(135deg, #8204dd, #8a06f0);
+    border: 1px solid rgba(245, 124, 0, 0.3);
+}
+.line4 { 
+    background: linear-gradient(135deg, #e3d105, #e1d305);
+    border: 1px solid rgba(67, 160, 71, 0.3);
+}
+.line5 { 
+    background: linear-gradient(135deg, #105bdc, #3c5fef);
+    border: 1px solid rgba(123, 31, 162, 0.3);
+}
+
+/* 地铁线路图样式 */
+.subway-map-container {
+    margin-top: 50px;
+    background: rgba(20, 25, 35, 0.9);
+    border-radius: 15px;
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.subway-map-container h3 {
+    color: #4fc3f7;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 600;
+}
+
+.map-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.subway-map {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+    cursor: zoom-in;
+    border-radius: 8px;
+    display: block;
+}
+
+.map-overlay {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.zoom-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(25, 118, 210, 0.9);
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.zoom-btn:hover {
+    background: rgba(33, 150, 243, 0.95);
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.map-note {
+    text-align: center;
+    color: #bbdefb;
+    font-size: 1rem;
+    margin-top: 15px;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+/* 高铁站卡片 */
+.station-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.station-card {
+    background: rgba(30, 35, 45, 0.9);
+    padding: 25px;
+    border-radius: 12px;
+    border-left: 4px solid #1976d2;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.station-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(33, 150, 243, 0.3);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.station-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.station-header h4 {
+    color: #e3f2fd;
+    font-size: 1.4rem;
+    margin: 0;
+    font-weight: 600;
+}
+
+.station-type {
+    background: rgba(25, 118, 210, 0.2);
+    color: #4fc3f7;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid rgba(79, 195, 247, 0.3);
+}
+
+.station-card p {
+    margin: 10px 0;
+    color: #bbdefb;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.station-card i {
+    color: #4fc3f7;
+    width: 20px;
+    text-align: center;
+}
+
+/* 高铁线路列表 */
+.route-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.route-item {
+    background: rgba(30, 35, 45, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid #43a047;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.3s ease;
+}
+
+.route-item:hover {
+    transform: translateY(-5px);
+    border-color: rgba(67, 160, 71, 0.3);
+    background: rgba(35, 40, 50, 0.95);
+}
+
+.route-item h4 {
+    color: #e3f2fd;
+    margin: 0 0 8px 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.route-item p {
+    color: #bbdefb;
+    margin: 0;
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* 购票方式 */
+.ticket-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 25px;
+    text-align: center;
+}
+
+.method {
+    background: rgba(30, 35, 45, 0.9);
+    padding: 25px 15px;
+    border-radius: 12px;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.method::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, 
+        rgba(25, 118, 210, 0.6),
+        rgba(33, 150, 243, 0.6));
+}
+
+.method:hover {
+    transform: translateY(-8px);
+    border-color: rgba(33, 150, 243, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.method i {
+    font-size: 2.5rem;
+    color: #4fc3f7;
+    margin-bottom: 15px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.method:hover i {
+    transform: scale(1.1);
+    color: #29b6f6;
+}
+
+.method p {
+    font-weight: 600;
+    margin: 10px 0 5px;
+    color: #e3f2fd;
+    font-size: 1.1rem;
+}
+
+.method span {
+    color: #bbdefb;
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
